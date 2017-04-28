@@ -1,0 +1,26 @@
+<input type="text" name="" value="" placeholder="Pesquisar" ng-model="procurarProduto">
+
+<a class="btn btn-success" href="#/produto/produto-form">Novo</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descrição</th>
+      <th>Preço</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="p in produtos | filter:procurarProduto">
+      <th>{{p.codigo}}</th>
+      <th>{{p.descricao}}</th>
+      <th>{{p.preco}}</th>
+      <th>
+        <a class="btn btn-danger" href="#/produto" ng-click="excluir($index)">Excluir</a>
+        <a class="btn btn-info" href="#/produto/{{p.codigo}}/edit" ng-click="editar(produto)">Editar</a>
+      </th>
+    </tr>
+  </tbody>
+</table>

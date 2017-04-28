@@ -1,0 +1,14 @@
+{
+  "name": "teste2",
+  "homepage": "https://github.com/guskamoto/teste2",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
