@@ -9,11 +9,13 @@ function produtoEditController(produtoService,$scope,$location,$routeParams){
   }
 
   function salvar(produto){
-    produtoService.salvarEditar(produto);
-    $location.path('produto');
+    if(parseInt(produto.codigo)){
+      produtoService.salvarEditar(produto);
+      $location.path('produto');
+    }else {
+      alert("O campo CÓDIGO só aceita números!");
+    }
   }
-
-
 
   getByCode(codigo);
   $scope.salvar = salvar;

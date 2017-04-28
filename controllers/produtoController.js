@@ -4,8 +4,12 @@ function produtoController(produtoService,$scope,$location){
   $scope.produto = {};
 
   function salvar(produto){
-    produtoService.salvar(produto);
-    $location.path('produto');
+    if (parseInt(produto.codigo)) {
+      produtoService.salvar(produto);
+      $location.path('produto');
+    }else {
+      alert("O campo CÓDIGO só aceita números!");
+    }
   }
 
   function listarProdutos(){

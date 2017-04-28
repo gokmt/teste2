@@ -16,7 +16,7 @@
     <tr ng-repeat="p in produtos | filter:procurarProduto">
       <th>{{p.codigo}}</th>
       <th>{{p.descricao}}</th>
-      <th>{{p.preco}}</th>
+      <th>{{p.preco | currency: 'R$'}}</th>
       <th>
         <a class="btn btn-danger" href="#/produto" ng-click="excluir($index)">Excluir</a>
         <a class="btn btn-info" href="#/produto/{{p.codigo}}/edit" ng-click="editar(produto)">Editar</a>
